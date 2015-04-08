@@ -34,7 +34,12 @@ namespace Week1Practice
             // 3. Print out your boolean value using the format: "I set my boolean value equal to <myBool>"
             Console.WriteLine("I set my boolean value equal to: " + myBool + ".");
             // 4. Using a For loop, print out each value in productsList.
-            // ??
+           
+            for (int i = 0; i < productsList.Count; i++)
+                {
+               Console.WriteLine(productsList[i]); 
+                }
+            
 
             // FOR LOOP PRACTICE
             // 1. Create a for loop that prints out the numbers 1 to 10.
@@ -112,7 +117,12 @@ namespace Week1Practice
             // 2. Print out the number of items in your list using the format: "My product list has <number of items> in it."
             Console.WriteLine("My product list has " + productsList.Count + " items in it.");
             // 3. Print out the number of letters of each item in productsList using the format: "<product> has <number of letters> in it."
-            // ?? 
+
+            for (int i = 0; i < productsList.Count; i++)
+            {
+                Console.WriteLine(productsList[i] + "has" + productsList[i].Length + "letters in it." );
+            }
+            
 
             // DECLARING AND CALLING FUNCTIONS
             // 1. Create a function called "Greeting" that takes one string parameter called "name".  This function will print "Hello <name>"
@@ -214,6 +224,7 @@ namespace Week1Practice
             //Code block
         }
 
+        //my function declarations
         public static void Greeting(string theName)
         {
             Console.WriteLine("Hello " + theName + "!");
