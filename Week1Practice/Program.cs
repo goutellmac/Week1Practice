@@ -12,6 +12,9 @@ namespace Week1Practice
         {
             // DECLARING VARIABLES
             // 1. Declare a string variable called "myName" and set it equal to your name
+
+            SuperLoop(1, 9, 1);
+            Console.ReadKey();
             string myName = "Mac";
             // 2. Declare a number varible called "myAge" and set it equal to your age
             int myAge = 23;
@@ -120,14 +123,16 @@ namespace Week1Practice
 
             for (int i = 0; i < productsList.Count; i++)
             {
-                Console.WriteLine(productsList[i] + "has" + productsList[i].Length + "letters in it." );
+                Console.WriteLine(productsList[i] + " has" + productsList[i].Length + " letters in it." );
             }
             
 
             // DECLARING AND CALLING FUNCTIONS
             // 1. Create a function called "Greeting" that takes one string parameter called "name".  This function will print "Hello <name>"
             // 2. Call the Greeting function by passing in "Geronimo Jackson" as your parameter.
+            //calling greeting function
             Greeting("Geronimo Jackson");
+
             // 3. Call the Greeting function by passing in myName as your parameter.
             Greeting(myName);
             
@@ -206,11 +211,14 @@ namespace Week1Practice
 
             // 2. Call your SuperLoop function using the following parameters:
             //      startNum = Call RealMultiply with the parameters 1, and TripleIt with the parameter of 3.
-            SuperLoop(RealMultiply(1, TripleIt(3)), 100, 2);
+            
             //      endNum = Call TripleIt with the parameter RealMultiply with the parameters: myAge, 7
             SuperLoop(1, TripleIt(RealMultiply(myAge, 7)), 2);
             //      increment = Call TripleIt with the parameter of myAge minus RealMultiply with the parameters 2, 4.
             SuperLoop(1, 100, RealMultiply(2, 4));
+
+            //Called SuperLoop with proper parameters
+            SuperLoop(RealMultiply(1, TripleIt(3)), TripleIt(RealMultiply(myAge, 7)), TripleIt(myAge - RealMultiply(2, 4)));
             
 
 
@@ -225,11 +233,12 @@ namespace Week1Practice
         }
 
         //my function declarations
+        //declaring function that takes a string as paramter and writes "Hello " + stringEntered
         public static void Greeting(string theName)
         {
             Console.WriteLine("Hello " + theName + "!");
         }
-
+        //declaring function DoubleIt that takes an int as a parameter and writes "Number doubled .... "
         public static void DoubleIt(int number)
         {
             Console.WriteLine("Number doubled is " + number * 2);
@@ -258,7 +267,15 @@ namespace Week1Practice
                 Console.WriteLine(i);
                 loopCount++;
             }
-            Console.WriteLine("That loop was craaaaaazy!  We looped " + loopCount + " times!");
+            if (endNum < 10)
+            {
+                Console.WriteLine("That loop was kind of lame honestly.  Maybe go for a bigger loop next time.  Step up your game.");
+            }
+            else
+            {
+                Console.WriteLine("That loop was craaaaaazy!  We looped " + loopCount + " times!");
+            }
+            
         }
 
         public static string newGreeting(string name)
